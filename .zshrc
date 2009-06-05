@@ -17,3 +17,22 @@ else
     eval `dircolors -b /etc/DIR_COLORS`
 fi
 alias ls="ls --color=auto"
+
+# Useful function that, if vi is invoked on a list of files, will check
+# and execute "sudo vi" on them if owned by root.
+# Thanks to William Scott, originally via Gary Kerbaugh
+# http://xanana.ucsc.edu/~wgscott/xtal/wiki/index.php/Why_zsh_Should_Be_the_Default_Shell_on_OS_X
+function vim {
+    LIMIT=$#
+    for ((i = 1; i <= $LIMIT; i++)) do
+        eval file="\$$i"
+        if [[ -e $file && ! -O $file ]] then
+            otherfile=1
+        fi
+    done
+    if [[ $otherfile = 1 ]] then
+        sudo vim "$@"
+    else
+        command vim "$@"
+    fi
+}
