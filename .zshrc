@@ -1,7 +1,7 @@
 # As advised in the emerge log by the always helpful Gentoo team
 autoload -U compinit promptinit
 compinit
-promptinit; prompt gentoo
+promptinit
 
 # More recommendations from Gentoo
 # http://www.gentoo.org/doc/en/zsh.xml
