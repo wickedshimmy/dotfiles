@@ -35,9 +35,9 @@ function precmd {
                 local o
                 local b
                 if [ -d "$g/rebase-apply" ]; then
-                    if test -f "$g/rebase-apply/rebasing"; then
+                    if [ -f "$g/rebase-apply/rebasing" ]; then
                         o="|REBASE"
-                    elif test -f "$g/rebase-apply/applying"; then
+                    elif [ -f "$g/rebase-apply/applying" ]; then
                         o="|AM"
                     else
                         o="|AM/REBASE"
