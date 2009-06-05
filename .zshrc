@@ -9,6 +9,12 @@ zstyle ":completion::complete:*" use-cache 1
 zstyle ":completion:*:descriptions" format "%U%B%d%b%u"
 zstyle ":completion:*:warnings" format "%BSorry, no matches for: %d%b"
 
+# Allow Ctrl-x f to disable cleverness in tab-selection
+# Thanks to ft in #git
+zle -C complete-files complete-word _generic;
+zstyle ':completion:complete-files:*' completer _files
+bindkey '^xf' complete-files
+
 # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
 # Ripped from the Gentoo skeleton bashrc I have
 if [[ -f ~/.dir_colors ]]; then
