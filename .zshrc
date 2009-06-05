@@ -3,6 +3,14 @@ autoload -U compinit promptinit
 compinit
 promptinit
 
+# Moved this out of the setprompt() fn
+# Thanks to littleprince.zh (http://w-a-n.cn)
+autoload colors
+zmodload zsh/terminfo
+if [[ "$terminfo[colors]" -gt 8 ]]; then
+   colors
+fi
+
 # More recommendations from Gentoo
 # http://www.gentoo.org/doc/en/zsh.xml
 zstyle ":completion::complete:*" use-cache 1
@@ -95,11 +103,7 @@ setprompt () {
     setopt prompt_subst
 
     # Load colors into the environment and set them properly
-    autoload colors zsh/terminfo
 
-    if [[ "$terminfo[colors]" -gt 8 ]]; then
-        colors
-    fi
 
     for COLOR in RED GREEN YELLOW WHITE BLACK; do
         eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'
