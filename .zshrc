@@ -9,3 +9,11 @@ zstyle ":completion::complete:*" use-cache 1
 zstyle ":completion:*:descriptions" format "%U%B%d%b%u"
 zstyle ":completion:*:warnings" format "%BSorry, no matches for: %d%b"
 
+# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+# Ripped from the Gentoo skeleton bashrc I have
+if [[ -f ~/.dir_colors ]]; then
+    eval `dircolors -b ~/.dir_colors`
+else
+    eval `dircolors -b /etc/DIR_COLORS`
+fi
+alias ls="ls --color=auto"
