@@ -1,0 +1,56 @@
+[general]
+metadata = ~/.offlineimap
+pythonfile = ~/.offlineimap/keyring.py
+
+accounts = gmail,fulbright
+maxsyncaccounts = 4
+
+socktimeout = 30
+
+[Account gmail]
+localrepository = local-gmail
+remoterepository = gmail
+autorefresh = 2
+
+[Repository local-gmail]
+type = Maildir
+localfolders = ~/mail/gmail
+
+[Repository gmail]
+type = Gmail
+remoteuser = awickedshimmy@gmail.com
+remotepasseval = get_password ("gmail.com")
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Trash', '[Gmail]/Spam', '[Gmail]/Starred']
+
+
+[Account fulbright]
+localrepository = local-fulbright
+remoterepository = fulbright
+autorefresh = 2
+
+[Repository local-fulbright]
+type = Maildir
+localfolders = ~/mail/fulbright
+
+[Repository fulbright]
+type = Gmail
+remoteuser = matthew.enright@fulbrightmail.org
+remotepasseval = get_password ("gmail.com")
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Trash', '[Gmail]/Spam', '[Gmail]/Starred']
+
+
+[Account usc]
+localrepository = local-usc
+remoterepository = usc
+autorefresh = 2
+
+[Repository local-usc]
+type = Maildir
+localfolders = ~/mail/usc
+
+[Repository usc]
+type = IMAP
+ssl = yes
+remotehost = imap.mail.sc.edu
+remoteusereval = get_username ("mail.sc.edu")
+remotepasseval = get_password ("mail.sc.edu")
