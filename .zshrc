@@ -8,7 +8,7 @@ promptinit
 autoload colors
 zmodload zsh/terminfo
 if [[ "$terminfo[colors]" -gt 8 ]]; then
-   colors
+    colors
 fi
 
 # More recommendations from Gentoo
@@ -26,14 +26,15 @@ bindkey '^xf' complete-files
 # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
 # Ripped from the Gentoo skeleton bashrc I have
 if [[ -f ~/.dir_colors ]]; then
-    eval `dircolors -b ~/.dir_colors`
+    eval $(dircolors -b ~/.dir_colors)
 else
-    eval `dircolors -b /etc/DIR_COLORS`
+    eval $(dircolors -b /etc/DIR_COLORS)
 fi
 alias ls="ls --color=auto"
 
-
-
+# precmd is a built-in zsh function that is called on each redraw
+# Used here to set the dynamic variables (GITBRANCH, etc.)
+# (More thanks for Aaron Toponce)
 function precmd {
     # Ripped from git's bash completion scripts, via Aaron Toponce
     git_ps1 () {
@@ -102,10 +103,10 @@ setprompt () {
     # Need this, so the prompt will work
     setopt prompt_subst
 
+    colors
+
     # Load colors into the environment and set them properly
-
-
-    for COLOR in RED GREEN YELLOW WHITE BLACK; do
+    for COLOR in RED GREEN YELLOW WHITE BLACK BLUE CYAN; do
         eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'
         eval PR_BRIGHT_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
     done
