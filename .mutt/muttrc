@@ -1,0 +1,15 @@
+set charset = utf-8
+
+set realname = "Matt Enright"
+set use_from = yes
+set envelope_from = yes
+set reverse_name
+
+mailboxes `find ~/mail/ -type d -name cur -printf '%h '`
+set folder = $HOME/mail/
+set spoolfile = $HOME/mail/
+set record = +sent/
+set postponed = +drafts/
+set mbox_type = Maildir
+set header_cache = $HOME/mutt/.hcache
+
