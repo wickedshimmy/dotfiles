@@ -13,9 +13,9 @@ fi
 
 # More recommendations from Gentoo
 # http://www.gentoo.org/doc/en/zsh.xml
-zstyle ":completion::complete:*" use-cache 1
-zstyle ":completion:*:descriptions" format "%U%B%d%b%u"
-zstyle ":completion:*:warnings" format "%BSorry, no matches for: %d%b"
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
 # Allow Ctrl-x f to disable cleverness in tab-selection
 # Thanks to ft in #git
@@ -71,9 +71,9 @@ function precmd {
                     fi
                 fi
                 if [ -n "$1" ]; then
-                    printf "$1" "${b##refs/heads/}$o
+                    printf "$1" ${b##refs/heads/}$o
                 else
-                    printf "%s" "${b##refs/heads/}$o
+                    printf "%s" ${b##refs/heads/}$o
                 fi
             fi
         else
@@ -109,22 +109,18 @@ setprompt () {
         eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'
         eval PR_BRIGHT_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
     done
-
     PR_RESET="%{$reset_color%}"
 
     # Set the prompt
-    PROMPT='${PR_BRIGHT_BLACK}<${PR_RESET}${PR_RED}<${PR_BRIGHT_RED}<${PR_RESET} \
-%D{%R.%S %a %b %d %Y}${PR_RED}!${PR_RESET}%$PR_PWDLEN<...<%~%<< \
-
-${PR_BRIGHT_BLACK}<${PR_RESET}${PR_RED}<${PR_BRIGHT_RED}<\
-${PR_RESET} %n@%m${PR_RED}!${PR_RESET}H:%h%(?.. E:%?)${GITBRANCH}\
+    PROMPT='%B${PR_BRIGHT_BLACK}<${PR_RESET}${PR_RED}<${PR_BRIGHT_RED}<%b\
+${PR_RESET}${PR_BRIGHT_GREEN} %n@%m ${PR_RESET}${PR_BRIGHT_BLUE}%${PR_PWDLEN}<..<%~%<<${PR_RESET}${PR_BRIGHT_RED}${GITBRANCH}\
 
 ${PR_BRIGHT_BLACK}>${PR_RESET}${PR_GREEN}>${PR_BRIGHT_GREEN}>\
-${PR_BRIGHT_WHITE} '
+${PR_RESET} '
 
     PROMPT2='${PR_BRIGHT_BLACK}>${PR_RESET}${PR_GREEN}>${PR_BRIGHT_GREEN}>\
 ${PR_RESET} %_ ${PR_BRIGHT_BLACK}>${PR_RESET}${PR_GREEN}>\
-${PR_BRIGHT_GREEN}>${PR_BRIGHT_WHITE} '
+${PR_BRIGHT_GREEN}>${PR_RESET} '
 }
 
 setprompt
