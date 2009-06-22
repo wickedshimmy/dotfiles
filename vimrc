@@ -1,3 +1,6 @@
+let g:snips_author = 'Matt Enright'
+let g:snips_author_mail = 'awickedshimmy@gmail.com'
+
 set ruler
 set bg=dark
 
@@ -34,7 +37,7 @@ filetype indent on
 set grepprg=grep\ -nH\ $*
 " Use git-grep for searching files in same repository
 " Thanks to Björn Steinbrink (doener in #git) for the tip
-func GitGrep (...)
+func! GitGrep (...)
     let save = &grepprg
     set grepprg=git\ grep\ -n\ $*
     let s = 'grep'
@@ -44,7 +47,7 @@ func GitGrep (...)
     exe s
     let &grepprg = save
 endfun
-command -nargs=? G call GitGrep (<f-args>)
+command! -nargs=? G call GitGrep (<f-args>)
 
 " Make sure coding conventions are not violated for particular cases
 " (thanks to Jeff King <peff@peff.net> for the tip via git@vger.kernel.org)

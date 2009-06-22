@@ -1,0 +1,87 @@
+set charset = utf-8
+
+set realname = "Matt Enright"
+set use_from = yes
+set envelope_from = yes
+set reverse_name
+
+folder-hook gmail/* set from=awickedshimmy@gmail.com
+folder-hook fulbright/* set from=matthew.enright@fulbrightmail.org
+folder-hook usc/* set from=enrightm@mailbox.sc.edu
+
+set folder = $HOME/mail/
+set spoolfile = $HOME/mail/
+set record = +sent/
+set postponed = +drafts/
+set mbox_type = Maildir
+mailboxes `find ~/mail/gmail -type d -name cur -printf '%h '`
+mailboxes `find ~/mail/fulbright -type d -name cur -printf '%h '`
+mailboxes `find ~/mail/usc -type d -name cur -printf '%h '`
+#mailboxes +"gmail/INBOX" +"fulbright/INBOX" +"usc/INBOX"
+
+set query_command = ~/.mutt/mutt-eds-query
+bind editor <tab> complete-query
+
+set header_cache = $HOME/.mutt/hcache/
+# This causes mutt to sort filedirs by inode number in the cache, which
+# fixes atrocious performance under ext3
+# http://lkml.org/lkml/2008/12/16/510
+set maildir_header_cache_verify
+
+set sort=threads
+set sort_aux=last-date-received
+set pager_index_lines=12
+set strict_threads
+set markers
+set smart_wrap
+set pager_context=5
+set implicit_autoview
+set noconfirmappend
+set mark_old = no
+
+ignore *
+unignore Date: From: User-Agent: X-Mailer X-Operating-System To: \
+         CC: Reply-To: Subject: Mail-Followup-To:
+hdr_order Date: From: User-Agent: X-Mailer X-Operating-System To: \
+          CC: Reply-To: Subject: Mail-Followup-To:
+set edit_headers=yes
+
+set alias_file = ~/.mutt/aliases
+source $alias_file
+set sort_alias = alias
+# Allows easy edit/reload of aliases file
+# ozonator, http://forums.gentoo.org/viewtopic-t-101184.html
+macro index \ea "!vim $alias_file\n:source $alias_file\n"
+
+bind pager j next-line
+bind pager k previous-line
+
+# Via Andrew Strong <andrew.david.45@gmail.com>
+# http://andrews-corner.org/mutt.html
+macro index,pager I '<shell-escape> fetchmail -v<enter>'
+
+# Define <tab> and = to switch to or see current msmtp account
+# Thomas Baruchel, via http://msmtp.sourceforge.net/doc/msmtp.html
+#macro compose \Cx_  ":set sendmail"
+#macro compose \Cx|  "\Cx_ = \"/usr/bin/msmtp"
+#macro compose \Cx&  ":macro compose \\t \\Cx"
+#macro compose <tab> "\Cx0"
+#macro compose =     "\Cx_\n"
+
+#macro compose \Cx0 "\Cx|\"\n\Cx&1\n\Cx_\n"
+#macro compose \Cx1 "\Cx| -a fulbright\"\n\Cx&2\n\Cx_\n"
+#macro compose \Cx2 "\Cx| -a sc\"\n\Cx&0\n\Cx_\n"
+
+# Color schemes/theming support
+#source ~/.mutt/themes/ivy_league
+#source ~/.mutt/themes/colors
+source ~/.mutt/themes/wshimmy
+
+# Inline coloring of diffs (git format-patch style)
+# Antonio Terceiro,
+# http://wiki.softwarelivre.org/bin/view/Blogs/BlogPostAntonioTerceiro20090423141108
+color   body    brightred       default "^-.*"
+color   body    brightgreen     default "^[+].*"
+color   body    brightyellow    default "^diff --git.*"
+color   body    brightyellow    default "^index [a-f0-9].*"
+color   body    brightmagenta   default "^@@.*"

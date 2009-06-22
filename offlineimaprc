@@ -1,8 +1,9 @@
 [general]
 metadata = ~/.offlineimap
 pythonfile = ~/.offlineimap/keyring.py
+sep = "/"
 
-accounts = gmail,fulbright
+accounts = gmail,fulbright,usc
 maxsyncaccounts = 4
 
 socktimeout = 30
@@ -18,7 +19,7 @@ localfolders = ~/mail/gmail
 
 [Repository gmail]
 type = Gmail
-remoteuser = awickedshimmy@gmail.com
+remoteusereval = get_username ("gmail.com")
 remotepasseval = get_password ("gmail.com")
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Trash', '[Gmail]/Spam', '[Gmail]/Starred']
 
@@ -34,8 +35,8 @@ localfolders = ~/mail/fulbright
 
 [Repository fulbright]
 type = Gmail
-remoteuser = matthew.enright@fulbrightmail.org
-remotepasseval = get_password ("gmail.com")
+remoteusereval = get_username ("fulbrightmail.org")
+remotepasseval = get_password ("fulbrightmail.org")
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Trash', '[Gmail]/Spam', '[Gmail]/Starred']
 
 
@@ -52,5 +53,6 @@ localfolders = ~/mail/usc
 type = IMAP
 ssl = yes
 remotehost = imap.mail.sc.edu
-remoteusereval = get_username ("mail.sc.edu")
-remotepasseval = get_password ("mail.sc.edu")
+remoteusereval = get_username ("uscweb")
+remotepasseval = get_password ("uscweb")
+folderfilter = lambda foldername: foldername not in ['Calendar', 'Contacts', 'Junk E-mail', 'Tasks', 'Deleted Items', 'Trash', 'Drafts', 'Public Folders.Internet Newsgroups', 'Sent', 'Sent Items']
