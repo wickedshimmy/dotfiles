@@ -30,7 +30,7 @@ if [[ -f ~/.dir_colors ]]; then
 else
     eval $(dircolors -b /etc/DIR_COLORS)
 fi
-alias ls="ls --color=auto"
+alias ls='ls --color=auto'
 
 # precmd is a built-in zsh function that is called on each redraw
 # Used here to set the dynamic variables (GITBRANCH, etc.)
