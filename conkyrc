@@ -24,7 +24,7 @@ use_xft yes
 xftfont monospace:size=8
 
 # Text alpha when using Xft
-xftalpha 0.8
+# xftalpha 0.8
 
 # Print everything to stdout?
 # out_to_console no
@@ -54,7 +54,7 @@ own_window yes
 own_window_type override
 
 # Use pseudo transparency with own_window?
- own_window_transparent yes
+own_window_transparent yes
 
 # If own_window_transparent is set to no, you can set the background colour here
 # own_window_colour hotpink
@@ -81,10 +81,10 @@ draw_borders yes
 draw_graph_borders yes
 
 # Stippled borders?
-stippled_borders 8
+stippled_borders 0
 
 # border margins
-border_margin 4
+border_margin 8
 
 # border width
 border_width 1
@@ -124,7 +124,7 @@ net_avg_samples 2
 override_utf8_locale yes
 
 # Add spaces to keep things from moving about?  This only affects certain objects.
-use_spacer no
+use_spacer none
 
 # Maximum size of buffer for user text, i.e. below TEXT line.
 #max_user_text 16384
@@ -150,9 +150,9 @@ ${color lightgrey}Uptime:$color $uptime ${color lightgrey}- Load:$color $loadavg
 ${color lightgrey}CPU Usage:${color #cc2222} $cpu% ${cpubar}
 ${color red}${cpugraph 0000ff 00ff00}
 ${color lightgrey}RAM Usage:
- / $color $mem/$memmax - $memperc% ${membar}
+ $color$mem/$memmax  $memperc% ${membar}
 ${color lightgrey}Swap Usage:
- / $color $swap/$swapmax - $swapperc% ${swapbar}
+ $color$swap/$swapmax $swapperc% ${swapbar}
 ${color lightgrey}File systems:
  / $color${fs_used /}/${fs_size /} ${fs_bar /}
 $color$stippled_hr
@@ -164,8 +164,9 @@ ${color lightgrey}Wireless Connection
  Down:${color #8844ee} ${downspeed eth1} k/s${color lightgrey} ${offset 80}Up:${color #22ccff} ${upspeed eth1} k/s
 ${color #0000ff}${downspeedgraph eth1 32,150 ff0000 0000ff} ${color #22ccff}${upspeedgraph eth1 32,150 0000ff ff0000}
 $color$stippled_hr
-${color lightgrey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+Processes:$color $processes  Running:$color $running_processes
 ${color}Name              PID     CPU%   MEM%
+${color}CPU Usage
 ${color #ddaa00} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
 ${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
