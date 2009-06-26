@@ -21,6 +21,7 @@ else
 	eval `dircolors -b /etc/DIR_COLORS`
 fi
 alias ls="ls --color=auto"
+alias grep="grep --color=auto"
 
 # Change the window title of X terminals 
 case $TERM in
@@ -33,3 +34,5 @@ case $TERM in
 esac
 
 export ROOTSYS=/usr/local
+# uncomment the following to activate bash-completion:
+[ -f /etc/profile.d/bash-completion ] && source /etc/profile.d/bash-completion
