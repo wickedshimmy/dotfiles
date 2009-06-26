@@ -1,0 +1,3 @@
+offlineimap/[Account,Repository]*
+offlineimap/[lock,pid]*
+mutt/hcache
