@@ -1,0 +1,26 @@
+color   status      brightred       default
+color   message     brightred       default
+color   error       brightred       default
+
+color   indicator   brightgreen     default
+color   normal      white           default
+color   index       brightwhite     default "~N|~O"
+color   index       red             default ~D
+color   index       blue            default ~F
+color   tree        white           default
+color   markers     brightred       default
+color   search      white           default
+
+color   header      brightgreen     default ^(From|To|Cc|Bcc):
+color   header      brightyellow    default ^(Date|Subject):
+#color   body        brightmagenta   default [^\s]+@[^\s]+\.[^\s]+$/
+color   body        brightwhite      default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color   body        brightwhite      default (https?|ftp|git|ssh)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+color   body        brightyellow    default "[;:]-[)/(|]"
+
+color   hdrdefault  brightblack     default
+color   quoted      cyan            default
+color   signature   brightblack     default
+color   attachment  brightyellow    default
+color   tilde       brightblue      default
+
