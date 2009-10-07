@@ -61,10 +61,20 @@ au BufNewFile,BufRead ~/workspace/git/* set noet sts=8 sw=8 ts=8
 
 " Remove trailing whitespace (k0001, #git)
 " autocmd BufWritePre *:%s/\s\+$//e
+
 " Thanks to Loïc Minier <lool@dooz.org>, desktop-devel-list for the whitespace indicators
 " Addditions from Bastien Nocera <hadess@hadess.net>, via Xavier Claessens <xclaesse@gmail.com>
 set list
 set listchars=tab:↦\ ,trail:»,extends:↷,precedes:↶,nbsp:% ",eol:•
+
+if has('gui_running')
+    set guioptions-=T
+    set guioptions-=m
+    set guioptions-=r
+    set guioptions-=L
+    colorscheme desert
+    set guifont=Droid\ Sans\ Mono\ 9
+endif
 
 "#region Python IDE features
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
