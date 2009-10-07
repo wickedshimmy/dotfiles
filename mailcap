@@ -1,0 +1,9 @@
+text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput
+application/pdf; evince %s
+image/jpeg; eog %s
+image/pjpeg; eog %s
+image/png; eog %s
+image/gif; eog %s
+
+application/msword; oowriter %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; oowriter %s
