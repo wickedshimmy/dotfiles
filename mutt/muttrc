@@ -7,7 +7,6 @@ set reverse_name
 
 folder-hook gmail/* set from=awickedshimmy@gmail.com
 folder-hook fulbright/* set from=matthew.enright@fulbrightmail.org
-folder-hook usc/* set from=enrightm@mailbox.sc.edu
 
 set folder = $HOME/mail/
 set spoolfile = $HOME/mail/
@@ -16,7 +15,6 @@ set postponed = +drafts/
 set mbox_type = Maildir
 mailboxes `find ~/mail/gmail -type d -name cur -printf '%h '`
 mailboxes `find ~/mail/fulbright -type d -name cur -printf '%h '`
-mailboxes `find ~/mail/usc -type d -name cur -printf '%h '`
 #mailboxes +"gmail/INBOX" +"fulbright/INBOX" +"usc/INBOX"
 
 set query_command = ~/.mutt/mutt-eds-query

@@ -3,7 +3,7 @@ metadata = ~/.offlineimap
 pythonfile = ~/.offlineimap/keyring.py
 sep = "/"
 
-accounts = gmail,fulbright,usc
+accounts = gmail,fulbright
 maxsyncaccounts = 4
 
 socktimeout = 30
