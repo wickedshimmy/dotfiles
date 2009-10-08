@@ -56,6 +56,18 @@ macro index \ea "!vim $alias_file\n:source $alias_file\n"
 bind pager j next-line
 bind pager k previous-line
 
+set sidebar_visible = yes
+set sidebar_sort = yes
+set sidebar_delim = '  '
+set sidebar_width = 40
+color sidebar_new brightwhite default
+
+bind index J sidebar-next
+bind index K sidebar-prev
+bind index,pager o sidebar-open
+bind index,pager O sidebar-open
+macro index,pager . '<enter-command>toggle sidebar_visible<enter>'
+
 # Via Andrew Strong <andrew.david.45@gmail.com>
 # http://andrews-corner.org/mutt.html
 #macro index,pager I '<shell-escape> fetchmail -v<enter>'
