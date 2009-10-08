@@ -1,6 +1,9 @@
 set charset = utf-8
 
 set realname = "Matt Enright"
+alternates awickedshimmy@gmail\.com
+alternates matt\.enright@acm\.org
+alternates matthew\.enright@fulbrightmail\.org
 set use_from = yes
 set envelope_from = yes
 set reverse_name
