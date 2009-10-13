@@ -7,6 +7,7 @@ alternates matthew\.enright@fulbrightmail\.org
 set use_from = yes
 set envelope_from = yes
 set reverse_name
+source ~/.mutt/gpg.rc
 
 folder-hook gmail/* set from=awickedshimmy@gmail.com
 folder-hook fulbright/* set from=matthew.enright@fulbrightmail.org
