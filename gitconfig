@@ -37,5 +37,6 @@
 
 [alias]
 	#owns = !sh -c "git blame -w $1 | sed -e 's/^[0-9a-f]* (\(.*\) *200[7-9]-..-.. .*/\1/' | sort | uniq -c | sort -n -r | head -n 10" -
+	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 	whois = !sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -
 	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
