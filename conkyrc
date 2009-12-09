@@ -21,7 +21,7 @@ background yes
 use_xft yes
 
 # Xft font when Xft is enabled
-xftfont monospace:size=8
+xftfont monospace:size=10
 
 # Text alpha when using Xft
 # xftalpha 0.8
@@ -84,7 +84,7 @@ draw_graph_borders yes
 stippled_borders 0
 
 # border margins
-border_margin 8
+border_inner_margin 8
 
 # border width
 border_width 1
