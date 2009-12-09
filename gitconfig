@@ -21,3 +21,13 @@
 	untracked = cyan
 [branch]
 	autosetupmerge = true
+
+[bz-tracker "gnome"]
+	host = bugzilla.gnome.org
+	default-bug-severity = enhancement
+[bz-tracker "novell"]
+	host = bugzilla.novell.com
+	default-bug-severity = enhancement
+[bz-tracker "gentoo"]
+	host = bugzilla.gentoo.org
+	default-bug-severity = enhancement
