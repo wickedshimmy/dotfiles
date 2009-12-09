@@ -33,6 +33,7 @@ set fdm=marker fmr=#region,#endregion
 filetype on
 filetype plugin on
 filetype indent on
+nmap ,a :GNOMEAlignArguments<CR>
 
 set ofu=syntaxcomplete
 set completeopt=longest,menuone
