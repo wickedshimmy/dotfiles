@@ -30,8 +30,6 @@ map \2 :!newsbody -qs -n % -p aspell check \%f<CR>
 map ,v :sp ~/.vimrc<CR><C-W>_
 map <silent> ,V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-set fdm=marker fmr=#region,#endregion
-
 filetype on
 filetype plugin on
 filetype indent on
@@ -80,19 +78,3 @@ if has('gui_running')
     set guifont=Deja\ Vu\ Sans\ Mono\ 8
 endif
 
-"#region Python IDE features
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"inoremap <Nul> <C-x><C>
-
-"Error checking
-autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-autocmd BufRead *.py set efm=%C\ %,%#,%A\ \ File\ \"%f\F\\,\ line\ %l%,%#,%Z%[%^\ ]%\\@=%m
-
-python << EOL
-import vim
-def EvaluateCurrentRange():
-    eval (compile ('\n',join (vim.current.range),'','exec'), globals ())
-EOL
-
-map <C-h> :py EvaluateCurrentRange()
-"#endregion
