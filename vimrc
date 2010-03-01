@@ -17,6 +17,7 @@ set expandtab
 set smarttab
 
 set wrapmargin=120
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 nmap <silent> <C-v> :set paste<CR>"*p:set nopaste<CR>
 
@@ -70,6 +71,7 @@ set list
 set listchars=tab:↦\ ,trail:»,extends:↷,precedes:↶,nbsp:% ",eol:•
 
 if has('gui_running')
+    set number
     set guioptions-=T
     set guioptions-=m
     set guioptions-=r
