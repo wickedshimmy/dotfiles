@@ -20,6 +20,7 @@ set wrapmargin=120
 
 nmap <silent> <C-v> :set paste<CR>"*p:set nopaste<CR>
 
+set dictionary+=/usr/share/dict/words
 map  :w!<CR>:!aspell check %<CR>:e! %<CR>
 map  \1\2<CR>:e! %<CR>
 map \1 :w!<CR>
@@ -73,8 +74,8 @@ if has('gui_running')
     set guioptions-=m
     set guioptions-=r
     set guioptions-=L
-    colorscheme desert
-    set guifont=Droid\ Sans\ Mono\ 9
+    colorscheme candycode
+    set guifont=Deja\ Vu\ Sans\ Mono\ 8
 endif
 
 "#region Python IDE features
