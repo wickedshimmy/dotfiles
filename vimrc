@@ -2,6 +2,7 @@ let g:snips_author = 'Matt Enright'
 let g:snips_author_mail = 'awickedshimmy@gmail.com'
 
 set ruler
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set bg=dark
 
 set autoindent
@@ -40,21 +41,6 @@ set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-set grepprg=grep\ -nH\ $*
-" Use git-grep for searching files in same repository
-" Thanks to Björn Steinbrink (doener in #git) for the tip
-func! GitGrep (...)
-    let save = &grepprg
-    set grepprg=git\ grep\ -n\ $*
-    let s = 'grep'
-    for i in a:000
-        let s = s . ' ' . i
-    endfor
-    exe s
-    let &grepprg = save
-endfun
-command! -nargs=? G call GitGrep (<f-args>)
 
 " Make sure coding conventions are not violated for particular cases
 " (thanks to Jeff King <peff@peff.net> for the tip via git@vger.kernel.org)
