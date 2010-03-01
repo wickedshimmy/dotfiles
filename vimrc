@@ -20,6 +20,16 @@ set smarttab
 set wrapmargin=120
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
+set tags=tags
+let g:ctags_statusline = 1
+let generate_tags = 1
+let Tlist_Compact_Format = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_File_Fold_Auto_Close = 1
+nnoremap TT :TlistToggle<CR>
+nnoremap <F4> :TlistToggle<CR>
+
 nmap <silent> <C-v> :set paste<CR>"*p:set nopaste<CR>
 
 set dictionary+=/usr/share/dict/words
