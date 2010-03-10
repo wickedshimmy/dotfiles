@@ -21,7 +21,7 @@ background yes
 use_xft yes
 
 # Xft font when Xft is enabled
-xftfont monospace:size=10
+xftfont monospace:size=8
 
 # Text alpha when using Xft
 # xftalpha 0.8
