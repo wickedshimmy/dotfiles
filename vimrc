@@ -73,3 +73,4 @@ if has('gui_running')
     set guifont=Deja\ Vu\ Sans\ Mono\ 8
 endif
 
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
