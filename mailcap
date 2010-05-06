@@ -5,5 +5,4 @@ image/pjpeg; eog %s
 image/png; eog %s
 image/gif; eog %s
 
-application/msword; oowriter %s
-application/vnd.openxmlformats-officedocument.wordprocessingml.document; oowriter %s
+application/octet-stream; gnome-open %s
