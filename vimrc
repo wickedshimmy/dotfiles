@@ -31,8 +31,6 @@ let Tlist_File_Fold_Auto_Close=1
 nnoremap TT :TlistToggle<CR>
 nnoremap <F4> :TlistToggle<CR>
 
-nmap <silent> <C-v> :set paste<CR>"*p:set nopaste<CR>
-
 set dictionary+=/usr/share/dict/words
 map  :w!<CR>:!aspell check %<CR>:e! %<CR>
 map  \1\2<CR>:e! %<CR>
