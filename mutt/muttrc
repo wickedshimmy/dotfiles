@@ -61,7 +61,7 @@ bind pager k previous-line
 set sidebar_visible = yes
 set sidebar_sort = yes
 set sidebar_delim = '  '
-set sidebar_width = 40
+set sidebar_width = 30
 color sidebar_new brightwhite default
 
 bind index J sidebar-next
