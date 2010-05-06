@@ -8,6 +8,7 @@ set bg=dark
 set autoindent
 
 set incsearch
+:nnoremap <CR> :nohlsearch<CR>/<BS>
 set ignorecase
 set smartcase
 
