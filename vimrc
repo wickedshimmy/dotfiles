@@ -28,7 +28,7 @@ let Tlist_Compact_Format=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_File_Fold_Auto_Close=1
-nnoremap <F4> :TlistToggle<CR>
+nnoremap <F4> :TlistToggle<CR><C-W>=
 
 set dictionary+=/usr/share/dict/words
 
