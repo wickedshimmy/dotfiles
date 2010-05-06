@@ -62,6 +62,7 @@ set listchars=tab:↦\ ,trail:»,extends:↷,precedes:↶,nbsp:% ",eol:•
 
 if has('gui_running')
     set number
+    set cursorline
     set guioptions-=T
     set guioptions-=m
     set guioptions-=r
