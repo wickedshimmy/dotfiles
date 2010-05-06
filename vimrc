@@ -42,6 +42,11 @@ map \2 :!newsbody -qs -n % -p aspell check \%f<CR>
 map ,v :sp ~/.vimrc<CR><C-W>_
 map <silent> ,V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+
 filetype on
 filetype plugin on
 filetype indent on
