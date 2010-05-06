@@ -69,8 +69,11 @@ if has('gui_running')
     set guioptions-=m
     set guioptions-=r
     set guioptions-=L
-    colorscheme candycode
-    set guifont=Deja\ Vu\ Sans\ Mono\ 8
+    set guioptions+=c
+    colorscheme monokai_modified
+    set guifont=Deja\ Vu\ Sans\ Mono\ 7.5
+    set columns=200
+    set lines=45
 endif
 
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
