@@ -28,14 +28,9 @@ let Tlist_Compact_Format=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_File_Fold_Auto_Close=1
-nnoremap TT :TlistToggle<CR>
 nnoremap <F4> :TlistToggle<CR>
 
 set dictionary+=/usr/share/dict/words
-map  :w!<CR>:!aspell check %<CR>:e! %<CR>
-map  \1\2<CR>:e! %<CR>
-map \1 :w!<CR>
-map \2 :!newsbody -qs -n % -p aspell check \%f<CR>
 
 map ,v :sp ~/.vimrc<CR><C-W>_
 map <silent> ,V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -51,9 +46,6 @@ filetype indent on
 nmap ,a :GNOMEAlignArguments<CR>
 
 set completeopt=menu,menuone,longest
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Make sure coding conventions are not violated for particular cases
 " (thanks to Jeff King <peff@peff.net> for the tip via git@vger.kernel.org)
