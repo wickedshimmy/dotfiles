@@ -1,5 +1,5 @@
-let g:snips_author = 'Matt Enright'
-let g:snips_author_mail = 'awickedshimmy@gmail.com'
+let g:snips_author='Matt Enright'
+let g:snips_author_mail='awickedshimmy@gmail.com'
 
 set ruler
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -21,12 +21,12 @@ set wrapmargin=120
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 set tags=tags
-let g:ctags_statusline = 1
-let generate_tags = 1
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_File_Fold_Auto_Close = 1
+let g:ctags_statusline=1
+let generate_tags=1
+let Tlist_Compact_Format=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_GainFocus_On_ToggleOpen=1
+let Tlist_File_Fold_Auto_Close=1
 nnoremap TT :TlistToggle<CR>
 nnoremap <F4> :TlistToggle<CR>
 
