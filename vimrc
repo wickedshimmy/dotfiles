@@ -4,6 +4,7 @@ let g:snips_author_mail='awickedshimmy@gmail.com'
 command! -bar -nargs=1 OpenURL :!gnome-open <args>
 
 set ruler
+set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set bg=dark
 
