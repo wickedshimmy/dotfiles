@@ -103,8 +103,8 @@ alignment top_left
 
 # Gap between borders of screen and text
 # same thing as passing -x at command line
-gap_x 900
-gap_y 150
+gap_x 945
+gap_y 240
 
 # Subtract file system buffers from used memory?
 no_buffers yes
