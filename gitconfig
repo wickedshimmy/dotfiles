@@ -36,7 +36,9 @@
 	default-bug-severity = enhancement
 
 [alias]
+	alias = !sh -c 'git config --global alias.\"$1\" \"$2\"'
 	debug = !GIT_PAGER= gdb --args git
+	history = log --all --decorate --graph --pretty=oneline --abbrev-commit
 	lastlog = log ORIG_HEAD.. --stat --no-merges
 	logk = log --graph --pretty=oneline --abbrev-commit --decorate
 	msg = commit --allow-empty -m
@@ -45,6 +47,10 @@
 	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 	whois = !sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -
 	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+	ls = status -s
+	s = status -s
+	dc = diff --cached
+	fixup = !f() { git commit -m "$(git show -s --pretty='format:fixup! %s%n%nFixup for %h%n' "$@")"; }; f
 
 [rerere]
 	enabled = 1
