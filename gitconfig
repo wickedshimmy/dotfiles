@@ -22,7 +22,7 @@
 [branch]
 	autosetupmerge = true
 [github]
-	user = WickedShimmy
+	user = wickedshimmy
 	token = c6ea337066b253846d64cb582c52c7ed
 
 [bz-tracker "gnome"]
