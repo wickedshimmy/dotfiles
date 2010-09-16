@@ -52,5 +52,7 @@
 	dc = diff --cached
 	fixup = !f() { git commit -m "$(git show -s --pretty='format:fixup! %s%n%nFixup for %h%n' "$@")"; }; f
 
+[rebase]
+	autosquash = true
 [rerere]
 	enabled = 1
