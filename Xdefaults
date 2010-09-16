@@ -1,0 +1,13 @@
+urxvt*saveLines: 12000
+urxvt*scrollBar: false
+urxvt*scrollTtyOutput: false
+urxvt*scrollWithBuffer: true
+urxvt*scrollTtyKeypress: true
+urxvt*geometry: 132x43
+
+urxvt*perl-ext-common: default,matcher
+urxvt*urlLauncher: gnome-open
+urxvt*matcher.button: 1
+
+urxvt*font: xft:Monospace:pixelsize=10
+urxvt*boldFont: xft:Monospace:bold:pixelsize=10
