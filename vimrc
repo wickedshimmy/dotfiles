@@ -7,6 +7,7 @@ set ruler
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)[%{&fo}]\ %P
 set bg=dark
+set hidden
 
 set autoindent
 
@@ -78,3 +79,6 @@ if has('gui_running')
 endif
 
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+set exrc
+set secure
