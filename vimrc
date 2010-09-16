@@ -5,7 +5,7 @@ command! -bar -nargs=1 OpenURL :!gnome-open <args>
 
 set ruler
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)[%{&fo}]\ %P
 set bg=dark
 
 set autoindent
