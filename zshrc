@@ -117,21 +117,20 @@ setprompt () {
     colors
 
     # Load colors into the environment and set them properly
-    for COLOR in RED GREEN YELLOW WHITE BLACK BLUE CYAN; do
+    for COLOR in RED GREEN YELLOW WHITE BLACK BLUE CYAN MAGENTA; do
         eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'
         eval PR_BRIGHT_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
     done
     PR_RESET="%{$reset_color%}"
 
     # Set the prompt
-    PROMPT='%B${PR_BRIGHT_BLACK}<${PR_RESET}${PR_RED}<${PR_BRIGHT_RED}<%b\
-${PR_RESET}${PR_BRIGHT_GREEN} %n@%m ${PR_RESET}${PR_BRIGHT_BLUE}%${PR_PWDLEN}<..<%~%<<${PR_RESET}${PR_BRIGHT_RED}${GITBRANCH}\
+    PROMPT='%B${PR_BRIGHT_BLACK}<${PR_RED}<${PR_BRIGHT_RED}<%b\
+${PR_BRIGHT_GREEN} %n@%m ${PR_BRIGHT_BLUE}%${PR_PWDLEN}<..<%~%<<${PR_BRIGHT_RED}${GITBRANCH}${PR_BRIGHT_YELLOW}${MONOENV}\
 
-${PR_BRIGHT_BLACK}>${PR_RESET}${PR_GREEN}>${PR_BRIGHT_GREEN}>\
-${PR_RESET} '
+${PR_BRIGHT_BLACK}>${PR_GREEN}>${PR_BRIGHT_GREEN}>${PR_RESET} '
 
-    PROMPT2='${PR_BRIGHT_BLACK}>${PR_RESET}${PR_GREEN}>${PR_BRIGHT_GREEN}>\
-${PR_RESET} %_ ${PR_BRIGHT_BLACK}>${PR_RESET}${PR_GREEN}>\
+    PROMPT2='${PR_BRIGHT_BLACK}>${PR_GREEN}>${PR_BRIGHT_GREEN}>\
+ %_ ${PR_BRIGHT_BLACK}>${PR_GREEN}>\
 ${PR_BRIGHT_GREEN}>${PR_RESET} '
 }
 
@@ -154,4 +153,19 @@ function vim {
     else
         command vim "$@"
     fi
+}
+
+function clr-env {
+    MONO_PREFIX=/opt/$1
+    GNOME_PREFIX=/usr
+    export DYLD_LIBRARY_PATH=$MONO_PREFIX/lib:$DYLD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$MONO_PREFIX/lib:$LD_LIBRARY_PATH
+    export C_INCLUDE_PATH=$MONO_PREFIX/include:$GNOME_PREFIX/include
+    export ACLOCAL_PATH=$MONO_PREFIX/share/aclocal
+    export PKG_CONFIG_PATH=$MONO_PREFIX/lib/pkgconfig:/usr/local/pkgconfig:$GNOME_PREFIX/lib/pkgconfig
+    export CONFIG_SITE=$HOME/.config/automake/config.site
+    export MONO_GAC_PREFIX=/usr
+    PATH=$MONO_PREFIX/bin:$PATH
+    echo "Switched active Mono environment!"
+    MONOENV=" ${MONO_PREFIX}"
 }
