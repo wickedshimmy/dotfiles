@@ -23,6 +23,9 @@ zle -C complete-files complete-word _generic;
 zstyle ':completion:complete-files:*' completer _files
 bindkey '^xf' complete-files
 
+setopt histignoredups
+bindkey ^R history-incremental-search-backward
+
 # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
 # Ripped from the Gentoo skeleton bashrc I have
 if [[ -f ~/.dir_colors ]]; then
@@ -96,6 +99,14 @@ function precmd {
         (( PR_PWDLEN = $TERMWIDTH - $PROMPTSIZE ))
     fi
 }
+
+# Enable vi keybindings
+bindkey -v
+function zle-keymap-select {
+    VIMODE="${${KEYMAP/vicmd/ xx}/(main|viins)/}"
+    zle reset-prompt
+}
+zle -N zle-keymap-select
 
 # Prompt design and accompanying subfunctions from Aaron Toponce
 # http://pthree.org/wp-content/uploads/2008/11/zsh_ps1.txt
