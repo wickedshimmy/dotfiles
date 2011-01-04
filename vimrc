@@ -55,10 +55,6 @@ inoremap <Down>  <C-o>gj
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
-" Make sure coding conventions are not violated for particular cases
-" (thanks to Jeff King <peff@peff.net> for the tip via git@vger.kernel.org)
-au BufNewFile,BufRead ~/workspace/git/* set noet sts=8 sw=8 ts=8
-
 set wildmenu
 set wildmode=longest,list
 
@@ -114,6 +110,10 @@ let g:Tex_ViewRule_pdf="gnome-open"
 let g:Tex_VeiwRule_dvi="gnome-open"
 
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+" Make sure coding conventions are not violated for particular cases
+" (thanks to Jeff King <peff@peff.net> for the tip via git@vger.kernel.org)
+au BufNewFile,BufRead ~/workspace/git/* setlocal noet sts=8 sw=8 ts=8
 
 " Load local .{vim,ex}rc files from the current directory
 set exrc
