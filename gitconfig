@@ -2,6 +2,8 @@
 	name = Matt Enright
 	email = awickedshimmy@gmail.com
 
+#[core]
+#	pager = less -+$LESS +'/^diff --git'
 [color]
 	branch = auto
 	diff = auto
