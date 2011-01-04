@@ -53,12 +53,20 @@ inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
 
-set completeopt=menu,menuone,longest
-
 " Make sure coding conventions are not violated for particular cases
 " (thanks to Jeff King <peff@peff.net> for the tip via git@vger.kernel.org)
 au BufNewFile,BufRead ~/workspace/git/* set noet sts=8 sw=8 ts=8
 
+set wildmenu
+set wildmode=longest,list
+
+set ofu=syntaxcomplete#Complete
+set completeopt=menu,menuone,longest,preview
+let g:SuperTabDefaultCompletionType='context'
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" When the completion popup is visible, enter selects the current item.
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Thanks to Loïc Minier <lool@dooz.org>, desktop-devel-list for the
 " whitespace indicators; addditions from Bastien Nocera <hadess@hadess.net>,
