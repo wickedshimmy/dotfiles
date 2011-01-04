@@ -135,6 +135,8 @@ ${PR_BRIGHT_GREEN}>${PR_RESET} '
 }
 
 setprompt
+#export PATH=$HOME/.gem/ruby/**/bin:$PATH
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Useful function that, if vi is invoked on a list of files, will check
 # and execute "sudo vi" on them if owned by root.
