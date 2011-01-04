@@ -48,10 +48,12 @@ nnoremap <F4> :TlistToggle<CR><C-W>=
 map ,v :sp ~/.vimrc<CR><C-W>_
 map <silent> ,V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+noremap <Up>     gk
+noremap <Down>   gj
+inoremap <Up>    <C-o>gk
+inoremap <Down>  <C-o>gj
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
 
 " Make sure coding conventions are not violated for particular cases
 " (thanks to Jeff King <peff@peff.net> for the tip via git@vger.kernel.org)
