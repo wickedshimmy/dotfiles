@@ -39,7 +39,9 @@ nnoremap <F5> :make<CR>
 set tags=tags
 let g:ctags_statusline=1
 let generate_tags=1
+let Tlist_Process_File_Always=1
 let Tlist_Compact_Format=1
+let Tlist_Enable_Fold_Column=0
 let Tlist_Exit_OnlyWindow=1
 let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_File_Fold_Auto_Close=1
