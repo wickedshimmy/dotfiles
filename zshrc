@@ -23,6 +23,9 @@ zle -C complete-files complete-word _generic;
 zstyle ':completion:complete-files:*' completer _files
 bindkey '^xf' complete-files
 
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.history
 setopt histignoredups
 bindkey ^R history-incremental-search-backward
 
