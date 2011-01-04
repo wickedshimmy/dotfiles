@@ -53,13 +53,6 @@ hdr_order Date: From: User-Agent: X-Mailer X-Operating-System To: \
           CC: Reply-To: Subject: Mail-Followup-To:
 set edit_headers=yes
 
-set alias_file = ~/.mutt/aliases
-source $alias_file
-set sort_alias = alias
-# Allows easy edit/reload of aliases file
-# ozonator, http://forums.gentoo.org/viewtopic-t-101184.html
-macro index \ea "!vim $alias_file\n:source $alias_file\n"
-
 bind pager j next-line
 bind pager k previous-line
 
