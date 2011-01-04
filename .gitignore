@@ -2,3 +2,6 @@ offlineimap/[Account,Repository]*
 offlineimap/[lock,pid]*
 mutt/hcache
 mutt/mutt-eds-query
+
+vim/.netrwhist
+vim/.VimballRecord
