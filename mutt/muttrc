@@ -79,8 +79,7 @@ macro index,pager . '<enter-command>toggle sidebar_visible<enter>'
 # http://andrews-corner.org/mutt.html
 #macro index,pager I '<shell-escape> fetchmail -v<enter>'
 set wait_key=no
-macro index,pager I '<shell-escape> offlineimap -o -u Noninteractive.Quiet &>/dev/null &<enter>'  'Synchronize all accounts with offlineimap.'
-
+macro index,pager I '<shell-escape>offlineimap -o -u Noninteractive.Quiet &>/dev/null &<enter>'  'Synchronize all accounts with offlineimap.'
 
 # Define <tab> and = to switch to or see current msmtp account
 # Thomas Baruchel, via http://msmtp.sourceforge.net/doc/msmtp.html

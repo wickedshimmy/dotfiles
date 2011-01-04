@@ -21,7 +21,7 @@ localfolders = ~/mail/gmail
 type = Gmail
 remoteusereval = get_username ("gmail.com")
 remotepasseval = get_password ("gmail.com")
-folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Trash', '[Gmail]/Spam', '[Gmail]/Starred']
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Sent Mail', '[Gmail]/Spam', '[Gmail]/Starred', '[Gmail]/Trash']
 
 
 [Account fulbright]
@@ -37,7 +37,7 @@ localfolders = ~/mail/fulbright
 type = Gmail
 remoteusereval = get_username ("fulbrightmail.org")
 remotepasseval = get_password ("fulbrightmail.org")
-folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Trash', '[Gmail]/Spam', '[Gmail]/Starred']
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Sent Mail', '[Gmail]/Spam', '[Gmail]/Starred', '[Gmail]/Trash']
 
 
 [Account usc]
