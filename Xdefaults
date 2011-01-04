@@ -11,3 +11,33 @@ urxvt*matcher.button: 1
 
 urxvt*font: xft:Monospace:pixelsize=10
 urxvt*boldFont: xft:Monospace:bold:pixelsize=10
+
+!Linux console colorscheme
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0000/cccc
+urxvt*foreground: #FFFFFF
+
+!black
+urxvt*color0:  #000000
+urxvt*color8:  #555555
+!red
+urxvt*color1:  #AA0000
+urxvt*color9:  #FF5555
+!green
+urxvt*color2:  #00AA00
+urxvt*color10: #55FF55
+!yellow
+urxvt*color3:  #AA5500
+urxvt*color11: #FFFF55
+!blue
+urxvt*color4:  #0000AA
+urxvt*color12: #5555FF
+!magenta
+urxvt*color5:  #AA00AA
+urxvt*color13: #FF55FF
+!cyan
+urxvt*color6:  #00AAAA
+urxvt*color14: #55FFFF
+!white
+urxvt*color7:  #AAAAAA
+urxvt*color15: #FFFFFF
