@@ -110,6 +110,7 @@ let g:Tex_ViewRule_pdf="gnome-open"
 let g:Tex_VeiwRule_dvi="gnome-open"
 
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+au BufRead,BufNewFile *.ru set ft=ruby
 
 " Make sure coding conventions are not violated for particular cases
 " (thanks to Jeff King <peff@peff.net> for the tip via git@vger.kernel.org)
