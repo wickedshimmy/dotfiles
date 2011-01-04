@@ -25,6 +25,9 @@ set smarttab
 set wrapmargin=120
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
+nnoremap <F3> :Gblame<CR>
+nnoremap <F5> :make<CR>
+
 set tags=tags
 let g:ctags_statusline=1
 let generate_tags=1
