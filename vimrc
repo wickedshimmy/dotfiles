@@ -74,6 +74,21 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 set list
 set listchars=tab:↦\ ,trail:»,extends:↷,precedes:↶,nbsp:% ",eol:•
 
+if has('cscope')
+    set cscopetagorder=0
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+    set nocscopeverbose
+    if filereadable('cscope.out')
+        cs add cscope.out
+    elseif $CSCOPE_DB != ''
+        cs add $CSCOPE_DB
+    endif
+    nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-\>i :cs find i <C-R>=expand("<cword>")<CR><CR>
+    set cscopeverbose
+endif
+
 colorscheme vividchalk
 if has('gui_running')
     set cursorline
