@@ -1,4 +1,6 @@
 text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput
+application/*; gnome-open %s
+
 application/pdf; evince %s
 image/jpeg; eog %s
 image/pjpeg; eog %s
@@ -6,3 +8,4 @@ image/png; eog %s
 image/gif; eog %s
 
 application/octet-stream; gnome-open %s
+application/vnd.ms-excel; gnumeric %s

@@ -78,6 +78,10 @@ if has('gui_running')
     set lines=45
 endif
 
+let g:Tex_DefaultTargetFormat="pdf"
+let g:Tex_ViewRule_pdf="gnome-open"
+let g:Tex_VeiwRule_dvi="gnome-open"
+
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 set exrc
