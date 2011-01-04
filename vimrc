@@ -74,6 +74,16 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 set list
 set listchars=tab:↦\ ,trail:»,extends:↷,precedes:↶,nbsp:% ",eol:•
 
+function! AppendSemicolon()
+    if getline('.') !~ ';$'
+        let start = getpos('.')
+        exec("s/$/;/")
+        call setpos('.', start)
+    endif
+endfunction
+nnoremap <C-CR> :call AppendSemicolon()<CR>
+inoremap <C-CR> <ESC>:call AppendSemicolon()<CR>o
+
 if has('cscope')
     set cscopetagorder=0
     set cscopequickfix=s-,c-,d-,i-,t-,e-
