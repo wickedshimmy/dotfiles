@@ -21,6 +21,9 @@ set shiftwidth=4
 set autoindent
 set copyindent
 set preserveindent
+nnoremap Q gqap
+vnoremap Q gq
+map ,s :%s/\s\+$//g<CR>
 
 filetype on
 filetype plugin on
@@ -56,8 +59,6 @@ set completeopt=menu,menuone,longest
 " (thanks to Jeff King <peff@peff.net> for the tip via git@vger.kernel.org)
 au BufNewFile,BufRead ~/workspace/git/* set noet sts=8 sw=8 ts=8
 
-" Remove trailing whitespace (k0001, #git)
-" autocmd BufWritePre *:%s/\s\+$//e
 
 " Thanks to Loïc Minier <lool@dooz.org>, desktop-devel-list for the
 " whitespace indicators; addditions from Bastien Nocera <hadess@hadess.net>,
