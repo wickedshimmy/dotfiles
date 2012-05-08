@@ -20,7 +20,12 @@ if [[ -f ~/.dir_colors ]]; then
 else
 	eval `dircolors -b /etc/DIR_COLORS`
 fi
-alias ls="ls --color=auto"
+
+if ls --color -d . >/dev/null 2>&1; then
+	alias ls="ls --color=auto"
+elif ls -G -d . >/dev/null 2>&1; then
+	alias ls="ls -G"
+fi
 alias grep="grep --color=auto"
 
 # Change the window title of X terminals 

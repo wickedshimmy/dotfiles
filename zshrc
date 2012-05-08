@@ -31,12 +31,17 @@ bindkey ^R history-incremental-search-backward
 
 # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
 # Ripped from the Gentoo skeleton bashrc I have
-if [[ -f ~/.dir_colors ]]; then
-    eval $(dircolors -b ~/.dir_colors)
-else
-    eval $(dircolors -b /etc/DIR_COLORS)
+
+if ls --color -d . >/dev/null 2>&1; then
+	alias ls="ls --color=auto"
+	if [[ -f ~/.dir_colors ]]; then
+	    eval $(dircolors -b ~/.dir_colors)
+	else
+	    eval $(dircolors -b /etc/DIR_COLORS)
+	fi
+elif ls -G -d . >/dev/null 2>&1; then
+	alias ls="ls -G"
 fi
-alias ls='ls --color=auto'
 
 # precmd is a built-in zsh function that is called on each redraw
 # Used here to set the dynamic variables (GITBRANCH, etc.)
